@@ -11,6 +11,9 @@
 		587D29DC2B206AD70051A317 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587D29DB2B206AD70051A317 /* ContentView.swift */; };
 		587D29DE2B206AD80051A317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587D29DD2B206AD80051A317 /* Assets.xcassets */; };
 		587D29E12B206AD80051A317 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587D29E02B206AD80051A317 /* Preview Assets.xcassets */; };
+		587D29EB2B206AF40051A317 /* login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 587D29E92B206AF40051A317 /* login.cpp */; };
+		587D2A102B2092140051A317 /* LoginBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 587D2A0F2B2092140051A317 /* LoginBridge.mm */; };
+		587D2A122B2099CD0051A317 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587D2A112B2099CD0051A317 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,12 @@
 		587D29DD2B206AD80051A317 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		587D29E02B206AD80051A317 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		587D29E22B206AD80051A317 /* login.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = login.entitlements; sourceTree = "<group>"; };
+		587D29E82B206AF40051A317 /* login-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "login-Bridging-Header.h"; sourceTree = "<group>"; };
+		587D29E92B206AF40051A317 /* login.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = login.cpp; sourceTree = "<group>"; };
+		587D29EA2B206AF40051A317 /* login.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = login.hpp; sourceTree = "<group>"; };
+		587D2A0E2B20912D0051A317 /* LoginBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginBridge.h; sourceTree = "<group>"; };
+		587D2A0F2B2092140051A317 /* LoginBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LoginBridge.mm; sourceTree = "<group>"; };
+		587D2A112B2099CD0051A317 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +63,15 @@
 			children = (
 				587D29D92B206AD70051A317 /* loginApp.swift */,
 				587D29DB2B206AD70051A317 /* ContentView.swift */,
+				587D2A112B2099CD0051A317 /* MainView.swift */,
+				587D2A0F2B2092140051A317 /* LoginBridge.mm */,
+				587D2A0E2B20912D0051A317 /* LoginBridge.h */,
+				587D29E92B206AF40051A317 /* login.cpp */,
+				587D29EA2B206AF40051A317 /* login.hpp */,
 				587D29DD2B206AD80051A317 /* Assets.xcassets */,
 				587D29E22B206AD80051A317 /* login.entitlements */,
 				587D29DF2B206AD80051A317 /* Preview Content */,
+				587D29E82B206AF40051A317 /* login-Bridging-Header.h */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -101,6 +116,7 @@
 				TargetAttributes = {
 					587D29D52B206AD70051A317 = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -139,7 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587D2A102B2092140051A317 /* LoginBridge.mm in Sources */,
 				587D29DC2B206AD70051A317 /* ContentView.swift in Sources */,
+				587D29EB2B206AF40051A317 /* login.cpp in Sources */,
+				587D2A122B2099CD0051A317 /* MainView.swift in Sources */,
 				587D29DA2B206AD70051A317 /* loginApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = login/login.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -286,6 +306,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lex.login;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "login/login-Bridging-Header.h";
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -295,6 +318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = login/login.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -311,6 +335,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lex.login;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "login/login-Bridging-Header.h";
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
